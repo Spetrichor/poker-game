@@ -27,25 +27,13 @@ QString Game::getusername()
 {
     return thisusername;
 }
-//QString Game::getcredits(QString thisuser)
-//{
-//    QSqlQuery query1;
-//    query1.exec("SELECT * FROM user WHERE username");
-//    while(query1.next())
-//    {
-//        if(query1.value(0).toString()==thisuser)
-//        {
-//            return query1.value(2).toString();
-//        }
-//    }
-//    return 0;
-//}
+
 void Game::setlabelinformation()
 {
     ui->label_username->setProperty("text",getusername());
-//    ui->label_username->setStyleSheet("color:RGB(225,225,225;)");
+
     ui->label_credits->setProperty("text",Player::getcredits(thisusername));
-//    ui->label_username->setStyleSheet("color:RGB(225,225,225;)");
+
     update();
 }
 

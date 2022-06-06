@@ -175,25 +175,7 @@ void Play::is_blackjack()
     {
         getinsurance();
         connect(this,SIGNAL(operate_3()),this,SLOT(totaljudge()));
-//        if(banker.qdarkpoint()==10)
-//        {
-//            if(buyer.if_insurance==true)
-//            {
-//                ui->label_jiaohu->setText("庄家为黑杰克。下家拥有保险,赢得2倍赌注,游戏结束！");
-//                repaint();
-//                Player::increasecredits(thisusername,buyer.qmybet()*2);
-//                isover=true;
-//            }else if(buyer.if_insurance==false){
-//                ui->label_jiaohu->setText("庄家为黑杰克,庄家赢得一倍赌注,游戏结束！");
-//                repaint();
-//                isover=true;
-//            }
-//        }
-//        else
-//        {
-//            ui->label_jiaohu->setText("庄家不是黑杰克,游戏继续...");
-//            repaint();
-//        }
+
     }
     else {
         ui->label_jiaohu->setText("双方都不是黑杰克,游戏继续...");
@@ -1794,21 +1776,21 @@ void Play::handleresult()
 //    QPushButton *qbegin=new QPushButton;
     QPushButton *qreturn=new QPushButton;
     QPushButton *qexit=new QPushButton;
-//    qbegin->setText("再来一次");
+
     qreturn->setText("返回");
     qexit->setText("离开赌场");
-//    qbegin->setCursor(Qt::PointingHandCursor);
+
     qreturn->setCursor(Qt::PointingHandCursor);
     qexit->setCursor(Qt::PointingHandCursor);
-//    qbegin->setStyleSheet("color:rgb(225,225,225);");
+
     qreturn->setStyleSheet("color:rgb(225,225,225);");
     qexit->setStyleSheet("color:rgb(225,225,225);");
-//    ui->verticalLayout_2->addWidget(qbegin);
+
     ui->verticalLayout_2->addWidget(qreturn);
     ui->verticalLayout_2->addWidget(qexit);
     listsecond.append(qreturn);
     listsecond.append(qexit);
-//    connect(qbegin,SIGNAL(clicked()),this,SLOT(qbeginclicked()));
+
     connect(qreturn,SIGNAL(clicked()),this,SLOT(qreturnclicked()));
     connect(qexit,SIGNAL(clicked()),this,SLOT(qexitclicked()));
 
@@ -1821,8 +1803,7 @@ void Play::qreturnclicked()
     listsecond.removeAt(0);listsecond.removeAt(0);
     buyer.reduction();
     banker.reduction();
-//    Buyer newbuyer;Banker newbanker;
-//    buyer=newbuyer;banker=newbanker;
+
 }
 void Play::qexitclicked()
 {

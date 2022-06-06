@@ -68,19 +68,7 @@ void Player::caculate_point(int size) {
 }
 QString Player::getcredits(QString thisuser)
 {
-//    QSqlQuery query;
-//    query.prepare("select username from user where username=:username");
 
-//    query.bindValue(":username", thisuser);
-//    query.exec();
-//    if(!query.next())
-//    {
-//        return 0;
-//    }
-//    else
-//    {
-//        return query.value(2).toString();
-//    }
     QSqlQuery query1;
     query1.exec("SELECT * FROM user WHERE username");
     while(query1.next())
@@ -120,13 +108,7 @@ void Banker::is_blackjack() {
     }else blackjack=false;
 }
 
-//void Banker::get_card(Card *card) {
-//    std::cout << "庄家摸牌\n";
-//    darkcard = deal_card(card);
-//    int size = mycard.getSize();
-//    mycard[size - 1] = deal_card(card);
-//    mycard.resize(size + 1);
-//}
+
 Card& Banker::get_card(Card *card) {
     int size = mycard.getSize();
     mycard[size - 1] = deal_card(card);
@@ -184,22 +166,7 @@ Card& Banker::get_darkcard(Card *card) {
 void Banker::get_initialcard(Card *card) {
     get_card(card);
     get_darkcard(card);
-//    if(mypoint==10)
-//    {
-//        std::cout<<"庄家摸了一张暗牌\n";
-//        get_darkcard(card);
-//        if(darkpoint==1)
-//        {
-//            std::cout<<"暗牌是A,庄家是blackjack\n";
-//            blackjack= true;
-//        }
-//
-//    }
-//    else if(mypoint==11)
-//    {
-//        std::cout<<"庄家摸了一张暗牌\n";
-//        get_darkcard(card);
-//    }
+
 }
 
 void Banker::pluspoint() {
@@ -227,13 +194,7 @@ void Buyer::is_blackjack() {
     } else blackjack=false;
 }
 
-//void Buyer::get_card(Card *card) {
-//    std::cout << "闲家摸牌\n";
-//    mycard[0] = deal_card(card);
-//    int size = mycard.getSize();
-//    mycard[size - 1] = deal_card(card);
-//    mycard.resize(size + 1);
-//}
+
 
 void Buyer::bet(int allmoney,int myybet) {
     if (myybet > allmoney) {
@@ -275,21 +236,4 @@ void Buyer::reduction()
     lose=false;
     mybet=0;
 }
-//void Buyer::get_insurance() {
-//    std::cout << "庄家明牌为A,下家是否购买保险(保险花费赌注一半且不退)?输入Y/N:\n";
-//    char insurance;
-//    std::cin >> insurance;
-//    switch (insurance) {
-//        case 'Y':
-//            std::cout << "已经购买保险\n";
-//            if_insurance = true;
-//            break;
-//        case 'N':
-//            std::cout << "放弃购买保险\n";
-//            if_insurance = false;
-//            break;
-//        default:
-//            std::cout << "请输入正确选项,不要捣乱,不允许再次进行游戏\n";
-//            exit(1);
-//    }
-//}
+
