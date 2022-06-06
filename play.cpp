@@ -1880,8 +1880,8 @@ void Play::on_pushButton_4jiabei_clicked()
     ui->label_duzhu->setProperty("text",buyer.qmybet()*2);
     Player::decreasecredits(thisusername,buyer.qmybet());
     ui->label_yue->setText(Player::getcredits(thisusername));
-    ui->label_currentpoint->setProperty("text",buyer.qmypoint());
     buyputcard(buyer.get_card(thiscard));
+    ui->label_currentpoint->setProperty("text",buyer.qmypoint());
     repaint();
     Sleep(500);
     if(buyer.is_lose()==true)
