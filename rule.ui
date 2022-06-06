@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Rule</class>
+ <widget class="QDialog" name="Rule">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>248</width>
+    <height>353</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>游戏规则</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>看不下去👉准备开始游戏</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPlainTextEdit" name="plainTextEdit">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="plainText">
+        <string>        开局时，庄家（dealer）给每个玩家（又称闲家）牌面向上发两张牌（明牌），再给庄家自己发两张牌，一张明牌，一张暗牌（牌面朝下）。
+        当所有的初始牌分发完毕后，如果玩家拿到的是A和T（无论顺序），就拥有黑杰克（Black Jack）；若庄家的明牌为T，且暗牌为A，应直接翻开并拥有Black Jack；如果庄家的明牌为A，则玩家可以考虑买不买保险（Insurance），保险金额是赌注的一半且不退。此时，如果庄家的暗牌为10点牌（构成Black Jack），那么翻开此牌，购买保险的玩家得到1倍赌注；如果庄家没有Black Jack则保持暗牌，玩家继续游戏。若玩家为Black Jack且庄家为其他，玩家赢得1.5倍（或2倍，1赔2时）赌注；若庄家为Black Jack且玩家为其他，庄家赢得赌注；若庄家和玩家均为Black Jack，平局，玩家拿回自己的赌注。
+        接下来是正常的拿牌流程：首名非黑杰克玩家选择拿牌（Hit）、停牌（Stand）、加倍（Double）、分牌（Split，两牌相同时）或投降（Surrender，庄家赢得一半赌注）；若选择拿牌，则后续只能选择拿牌或停牌。在发牌的过程中，如果玩家的牌点数的和超过21，玩家就输了——叫爆掉（Bust），庄家赢得赌注（无论庄家之后的点数是多少）。假如玩家没爆掉，又决定不再要牌了（停牌，或因加倍、投降而终止），则轮到下一名非黑杰克玩家选择。
+        当所有玩家停止拿牌后，庄家翻开暗牌，并持续拿牌直至点数不小于17（若有A，按最大而尽量不爆计算）。假如庄家爆掉了，那他就输了，玩家赢得1倍赌注；否则那么比点数大小，大为赢。点数相同为平局，玩家拿回自己的赌注。</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
